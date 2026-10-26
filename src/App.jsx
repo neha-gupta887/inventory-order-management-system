@@ -21,6 +21,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import StressSOS from "./pages/StressSOS";
 import ExamModeDashboard from "./pages/ExamModeDashboard";
 import ExamModeSetup from "./pages/ExamModeSetup";
+import InventoryApp from "./inventory/InventoryApp";
 
 const privateRoute = (element) => <ProtectedRoute>{element}</ProtectedRoute>;
 function App() {
@@ -28,6 +29,7 @@ function App() {
     <NotificationProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/inventory/*" element={<InventoryApp />} />
           <Route path="/chat" element={privateRoute(<AIChat />)} />
           <Route path="/notifications" element={privateRoute(<Notifications />)} />
           <Route path="/memory" element={privateRoute(<Memory />)} />
